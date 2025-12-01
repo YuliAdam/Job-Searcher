@@ -1,0 +1,26 @@
+@use '@styles/variables';
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo {
+  width: 30%;
+  margin-top: -32px;
+}
+
+.about {
+  font-weight: bold;
+  position: absolute;
+  top: calc(variables.$main_margin * 2);
+  left: calc(variables.$main_margin * 2);
+  color: var(--foreground);
+  cursor: pointer;
+  text-decoration: none;
+  &:hover {
+    color: var(--hover_text);
+    text-decoration: underline;
+  }
+}

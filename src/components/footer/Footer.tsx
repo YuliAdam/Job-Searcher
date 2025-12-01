@@ -1,4 +1,4 @@
-import GitHubLogo from '@/public/github-logo';
+import GitHubLogo from '@assets/github-logo';
 import styles from './footer.module.scss';
 
 const PERSONAL_INFO = {

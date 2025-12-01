@@ -31,10 +31,12 @@
         "name": "next"
       }
     ],
+    "baseUrl": "./src",
     "paths": {
-      "@/*": ["./*"],
-      "@app/*": ["./app/*"],
-      "@styles/*": ["./styles/*"],
+      "@components/*": ["components/*"],
+      "@app/*": ["app/*"],
+      "@styles/*": ["styles/*"],
+      "@assets/*": ["assets/*"]
     }
   },
   "include": [

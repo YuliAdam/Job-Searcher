@@ -2,8 +2,8 @@
 
 .footer {
   position: absolute;
-  bottom: 16px;
-  width: calc(100% - variables.$main_margin);
+  bottom: 8px;
+  width: calc(100% - variables.$main_margin * 2);
 }
 .wrap {
   display: flex;
