@@ -1,3 +1,5 @@
+import Main from '@components/main/Main';
+
 export default function Index() {
-  return <main>Main</main>;
+  return <Main />;
 }

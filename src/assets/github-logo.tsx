@@ -1,8 +1,6 @@
-interface Props {
-  className: string;
-}
+import type { SVGProps } from "./interfaces";
 
-export default function GitHubLogo(props: Props) {
+export default function GitHubLogo(props: SVGProps) {
   return (
     <svg
       {...props}

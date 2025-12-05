@@ -4,11 +4,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
 }
 
 .logo {
   width: 30%;
-  margin-top: -32px;
+  min-width: 250px;
+  margin-top: -16px;
 }
 
 .about {
@@ -22,5 +24,41 @@
   &:hover {
     color: var(--hover_text);
     text-decoration: underline;
+  }
+}
+.search {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  border: solid 1px var(--border_color);
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &:hover,
+  &.active,
+  &:hover &_icon {
+    border-color: var(--hover_text);
+    path {
+      stroke: var(--hover_text);
+    }
+  }
+  &_input {
+    margin: variables.$main_margin;
+    outline: none;
+    text-align: center;
+    border: hidden;
+    flex-grow: 1;
+    font-family: 'Courier New', Courier, monospace;
+  }
+  &_icon {
+    width: 20px;
+    height: auto;
+    margin-right: variables.$main_margin;
+    cursor: pointer;
+    path {
+      stroke: var(--border_color);
+    }
   }
 }

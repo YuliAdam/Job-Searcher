@@ -4,6 +4,7 @@
   position: absolute;
   bottom: 8px;
   width: calc(100% - variables.$main_margin * 2);
+  max-width: variables.$max_width;
 }
 .wrap {
   display: flex;

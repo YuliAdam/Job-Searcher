@@ -1,7 +1,6 @@
-interface Props {
-  className: string;
-}
-export default function Logo(props: Props) {
+import type { SVGProps } from './interfaces';
+
+export default function Logo(props: SVGProps) {
   return (
     <svg
       {...props}

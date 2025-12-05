@@ -36,7 +36,9 @@
       "@components/*": ["components/*"],
       "@app/*": ["app/*"],
       "@styles/*": ["styles/*"],
-      "@assets/*": ["assets/*"]
+      "@assets/*": ["assets/*"],
+      "@api/*": ["api/*"],
+      "@config/*": ["configuration/*"]
     }
   },
   "include": [
