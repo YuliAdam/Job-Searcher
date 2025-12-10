@@ -1,0 +1,32 @@
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px;
+  
+}
+.page {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  p {
+    margin: 0;
+    border-bottom: 1px solid transparent;
+  }
+  &.active {
+    cursor: pointer;
+    &:hover {
+      p {
+        border-bottom: 1px solid var(--hover_text);
+        color: var(--hover_text);
+      }
+    }
+  }
+  &.inactive {
+    cursor: default;
+    p {
+      color: var(--border_color);
+    }
+  }
+}

@@ -10,8 +10,9 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
   min-height: calc(100vh - variables.$main_margin * 2);
-  width: calc(100vw - variables.$main_margin * 2);
+  width: calc(100vw - variables.$main_margin * 4);
   max-width: variables.$max_width;
   font-family: 'Courier New', Courier, monospace;
   margin: auto;
+  position: relative;
 }

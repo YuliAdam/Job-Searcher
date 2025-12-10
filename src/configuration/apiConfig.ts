@@ -14,4 +14,4 @@ export const feedParams = {
   keywords: 'search_keywords',
   region: 'search_region',
 };
-
+export const MAX_JOB_COUNT = 100;
