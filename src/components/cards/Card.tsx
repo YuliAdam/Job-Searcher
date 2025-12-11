@@ -1,5 +1,6 @@
 import type { Job } from '@components/interfaces';
 import styles from './card.module.scss';
+import Image from 'next/image';
 
 interface Props {
   job: Job;
@@ -21,7 +22,14 @@ export default function Card(props: Props) {
             Company: ${props.job.companyName}; 
             Location: ${props.job.jobGeo}.`}
         </p>
-        <img src={props.job.companyLogo} alt="company logo" />
+        <Image
+          unoptimized
+          loader={() => props.job.companyLogo}
+          src={props.job.companyLogo}
+          alt="company logo"
+          width={50}
+          height={50}
+        />
       </div>
       <a href={props.job.url} target="_blank">
         Go to offer

@@ -5,9 +5,9 @@ import styles from './pagination.module.scss';
 import { loadingSelector, pageSelector } from 'store/selectors';
 import { MAX_JOB_COUNT } from '@config/apiConfig';
 import { CARDS_AT_PAGE } from '@components/cards/CardList';
-import { changePage, setPage } from 'store/slices/pageSlice';
-import { useEffect, useState } from 'react';
-import { setLoading } from 'store/slices/loadingSlice';
+import { setPage } from 'store/slices/pageSlice';
+import { useEffect } from 'react';
+import { redirect, useParams } from 'next/navigation';
 
 const pageSymbols = {
   goToInit: '<<',
@@ -17,37 +17,55 @@ const pageSymbols = {
 };
 
 export default function Pagination() {
-  const page = useSelector(pageSelector);
-  const loading = useSelector(loadingSelector);
+  const router = useParams();
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(setLoading(true));
-    setTimeout(() => dispatch(setLoading(false)), 1000);
-  }, [page]);
-  return loading ? null : (
+    console.log('effect');
+    router.page &&
+      !Array.isArray(router.page) &&
+      dispatch(setPage(parseInt(router.page)));
+  });
+  const page = useSelector(pageSelector);
+  const loading = useSelector(loadingSelector);
+
+  const goToFirstPage = () => {
+    page > 1 && redirect('1');
+  };
+
+  const goToPrevPage = () => {
+    page > 1 && redirect((page - 1).toString());
+  };
+
+  const goToNextPage = () => {
+    page < calcLastPageNum() && redirect((page + 1).toString());
+  };
+
+  const goToLastPage = () => {
+    page < calcLastPageNum() && redirect(calcLastPageNum().toString());
+  };
+
+  return (
     <section className={styles.pagination}>
       <Page
         className={page === 1 ? styles.inactive : styles.active}
         num={pageSymbols.goToInit}
-        onClick={() => page > 1 && dispatch(setPage(1))}
+        onClick={goToFirstPage}
       />
       <Page
         className={page === 1 ? styles.inactive : styles.active}
         num={pageSymbols.goPrev}
-        onClick={() => page > 1 && dispatch(changePage(-1))}
+        onClick={goToPrevPage}
       />
       <Page num={page.toString()} />
       <Page
         className={page < calcLastPageNum() ? styles.active : styles.inactive}
         num={pageSymbols.goNext}
-        onClick={() => page < calcLastPageNum() && dispatch(changePage(+1))}
+        onClick={goToNextPage}
       />
       <Page
         className={page < calcLastPageNum() ? styles.active : styles.inactive}
         num={pageSymbols.goToLast}
-        onClick={() =>
-          page < calcLastPageNum() && dispatch(setPage(calcLastPageNum()))
-        }
+        onClick={goToLastPage}
       />
     </section>
   );

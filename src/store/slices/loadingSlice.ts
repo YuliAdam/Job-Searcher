@@ -1,7 +1,7 @@
 import { createSlice, type PayloadAction } from '@reduxjs/toolkit';
 
 const initialState: { value: boolean } = {
-  value: true,
+  value: false,
 };
 
 const loadingSlice = createSlice({

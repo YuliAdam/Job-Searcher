@@ -1,4 +1,4 @@
-import type { SVGProps } from "./interfaces";
+import type { SVGProps } from './interfaces';
 
 export default function GitHubLogo(props: SVGProps) {
   return (
