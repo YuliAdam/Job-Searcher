@@ -13,8 +13,6 @@
     "isolatedModules": true,
     "jsx": "react-jsx",
     "incremental": true,
-    "react/no-unescaped-entities": "off",
-
     /* Bundler mode */
     "allowImportingTsExtensions": true,
     "verbatimModuleSyntax": true,
