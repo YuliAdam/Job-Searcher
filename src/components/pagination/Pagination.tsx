@@ -2,7 +2,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 import Page from './Page';
 import styles from './pagination.module.scss';
-import { loadingSelector, pageSelector } from 'store/selectors';
+import { pageSelector } from 'store/selectors';
 import { MAX_JOB_COUNT } from '@config/apiConfig';
 import { CARDS_AT_PAGE } from '@components/cards/CardList';
 import { setPage } from 'store/slices/pageSlice';
@@ -26,7 +26,6 @@ export default function Pagination() {
       dispatch(setPage(parseInt(router.page)));
   });
   const page = useSelector(pageSelector);
-  const loading = useSelector(loadingSelector);
 
   const goToFirstPage = () => {
     page > 1 && redirect('1');

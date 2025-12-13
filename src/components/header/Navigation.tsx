@@ -5,6 +5,8 @@ import styles from './header.module.scss';
 import { usePathname } from 'next/navigation';
 import { PATHS } from 'configuration/navigationConfig';
 import Search from '@components/header/Search';
+import { useSelector } from 'react-redux';
+import { pageSelector } from 'store/selectors';
 
 const itemsText = {
   toIndex: 'Go search',
@@ -13,10 +15,11 @@ const itemsText = {
 
 export default function Navigation() {
   const pathname = usePathname();
+  const page = useSelector(pageSelector);
   return (
     <nav>
       {pathname === PATHS.about
-        ? getLink(itemsText.toIndex, PATHS.empty)
+        ? getLink(itemsText.toIndex, PATHS.page(page))
         : getLink(itemsText.toAbout, PATHS.about)}
       {pathname !== PATHS.about && <Search />}
     </nav>

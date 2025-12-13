@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import styles from './header.module.scss';
 import type { RootState } from 'store/store';
 import { setSearchFromLocalStorage } from 'store/slices/searchSlice';
-import SearchIcon from '@assets/search-icon';
+import SearchIcon from '@assets/img/search-icon';
 
 export default function Search() {
   const search = useDispatch();

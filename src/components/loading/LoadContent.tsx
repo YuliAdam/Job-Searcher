@@ -1,4 +1,4 @@
-import SearchIcon from '@assets/search-icon';
+import SearchIcon from '@assets/img/search-icon';
 import styles from './loading.module.scss';
 export default function LoadContent() {
   return (

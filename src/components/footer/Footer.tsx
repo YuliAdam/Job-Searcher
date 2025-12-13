@@ -1,27 +1,22 @@
-import GitHubLogo from '@assets/github-logo';
+import GitHubLogo from '@assets/img/github-logo';
 import styles from './footer.module.scss';
-
-const PERSONAL_INFO = {
-  githubLink: 'https://github.com/YuliAdam/Job-Searcher/tree/base-structure',
-  githubName: 'YuliAdam',
-  year: '/2025',
-};
+import { GIT_HUB_INFO } from '@assets/gitHubInfo';
 
 export default function Footer() {
   return (
     <footer className={styles.footer}>
       <div className={styles.wrap}>
-        <a href={PERSONAL_INFO.githubLink} target="_blank">
+        <a href={GIT_HUB_INFO.href} target="_blank">
           <GitHubLogo className={styles.info_logo} />
         </a>
         <a
           className={styles.info_link}
-          href={PERSONAL_INFO.githubLink}
+          href={GIT_HUB_INFO.href}
           target="_blank"
         >
-          {PERSONAL_INFO.githubName}
+          {GIT_HUB_INFO.text}
         </a>
-        <span className={styles.info}>{PERSONAL_INFO.year}</span>
+        <span className={styles.info}>{GIT_HUB_INFO.year}</span>
       </div>
     </footer>
   );

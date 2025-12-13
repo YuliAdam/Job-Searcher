@@ -1,4 +1,5 @@
 import { createSlice, type PayloadAction } from '@reduxjs/toolkit';
+import { setPageToLocalStorage } from 'localStorage/localStorage';
 
 const initialState: { value: number } = {
   value: 1,
@@ -13,6 +14,7 @@ const pageSlice = createSlice({
     },
     setPage(state, action: PayloadAction<number>) {
       state.value = action.payload;
+      setPageToLocalStorage(action.payload);
     },
   },
 });

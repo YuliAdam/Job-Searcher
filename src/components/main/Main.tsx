@@ -4,9 +4,9 @@ import CardListWrapper from '@components/cards/CardListWrapper';
 
 export default async function Main() {
   return (
-    <main className={styles.main}>
+    <section className={styles.main}>
       <CardListWrapper />
       <Pagination />
-    </main>
+    </section>
   );
 }

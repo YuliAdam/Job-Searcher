@@ -6,7 +6,7 @@ import { StrictMode } from 'react';
 import { Provider } from 'react-redux';
 import { store } from 'store/store';
 
-export default function MainLayout({
+export default function Layout({
   children,
 }: Readonly<{
   children: React.ReactNode;
@@ -15,7 +15,7 @@ export default function MainLayout({
     <StrictMode>
       <Provider store={store}>
         <Header />
-        {children}
+        <main>{children}</main>
         <Footer />
       </Provider>
     </StrictMode>

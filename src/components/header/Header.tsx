@@ -1,4 +1,4 @@
-import Logo from '@assets/JOB-SEARCHER';
+import Logo from '@assets/img/JOB-SEARCHER';
 import styles from './header.module.scss';
 import Navigation from './Navigation';
 

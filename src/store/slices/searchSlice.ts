@@ -1,7 +1,7 @@
 import { createSlice, type PayloadAction } from '@reduxjs/toolkit';
 import {
-  getSearchValueFromLocalStorage,
-  setSearchValueInLocalStorage,
+  getSearchFromLocalStorage,
+  setSearchInLocalStorage,
 } from 'localStorage/localStorage';
 
 const initialState = {
@@ -13,10 +13,10 @@ const searchSlice = createSlice({
   initialState,
   reducers: {
     setSearchFromLocalStorage(state) {
-      state.value = getSearchValueFromLocalStorage();
+      state.value = getSearchFromLocalStorage();
     },
     setSearchInLocalStorage(state, action: PayloadAction<string>) {
-      setSearchValueInLocalStorage(action.payload);
+      setSearchInLocalStorage(action.payload);
       state.value = action.payload;
     },
     cleanSearch(state) {
