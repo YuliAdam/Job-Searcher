@@ -1,5 +1,5 @@
 export const EXTERNAL_LINKS = {
-  baseUrl: process.env.BASE_URL,
+  baseUrl: process.env.NEXT_PUBLIC_BASE_URL,
   feed: process.env.FEED_URL,
 };
 export const baseParams = {
