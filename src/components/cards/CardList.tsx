@@ -18,7 +18,7 @@ export default function CardList(props: Props) {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(setAllJob(props.response.jobs));
-  });
+  }, []);
   return (
     <section className={styles.list}>
       {props.response.jobs.map(

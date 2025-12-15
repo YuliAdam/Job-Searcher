@@ -20,11 +20,10 @@ export default function Pagination() {
   const router = useParams();
   const dispatch = useDispatch();
   useEffect(() => {
-    console.log('effect');
     router.page &&
       !Array.isArray(router.page) &&
       dispatch(setPage(parseInt(router.page)));
-  });
+  },[]);
   const page = useSelector(pageSelector);
 
   const goToFirstPage = () => {
