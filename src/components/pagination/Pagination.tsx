@@ -19,12 +19,13 @@ const pageSymbols = {
 export default function Pagination() {
   const router = useParams();
   const dispatch = useDispatch();
+  const page = useSelector(pageSelector);
   useEffect(() => {
     router.page &&
       !Array.isArray(router.page) &&
+      router.page !== page.toString() &&
       dispatch(setPage(parseInt(router.page)));
-  },[]);
-  const page = useSelector(pageSelector);
+  }, []);
 
   const goToFirstPage = () => {
     page > 1 && redirect('1');
