@@ -13,6 +13,7 @@ export default function Error({
   useEffect(() => {
     console.error(error);
   }, [error]);
+  console.log(error.message)
 
   return <ErrorContent reset={reset} />;
 }
