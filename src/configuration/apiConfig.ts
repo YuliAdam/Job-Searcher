@@ -1,5 +1,5 @@
 export const EXTERNAL_LINKS = {
-  baseUrl: process.env.NEXT_PUBLIC_BASE_URL,
+  baseUrl: 'https://jobicy.com/api/v2/remote-jobs',
   feed: process.env.FEED_URL,
 };
 export const baseParams = {
